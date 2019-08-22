@@ -16,7 +16,7 @@ fi
 #   usage: brew_install_this_if_not_exists wget
 yum_install_this_if_not_exists() {
     if this_command_exists "$1"; then
-        print_colored_line $color_cyan "$1 is already installed in brew."
+        print_colored_line $color_cyan "$1 is already installed in yum."
     else
         print_colored_line $color_cyan "$1 is NOT installed! start install $1:"
         sudo yum -y install "$1"

@@ -1,3 +1,10 @@
+.. image:: https://circleci.com/gh/MacHu-GWU/laptop.svg?style=svg
+    :target: https://circleci.com/gh/MacHu-GWU/laptop
+
+.. image:: https://img.shields.io/badge/STAR_Me_on_GitHub!--None.svg?style=social
+    :target: https://github.com/MacHu-GWU/configirl-project
+
+
 What is laptop Project
 ==============================================================================
 
