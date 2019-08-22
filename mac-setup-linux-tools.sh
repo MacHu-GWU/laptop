@@ -1,7 +1,7 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 
-source unix-lib.sh
+source mac-setup-lib.sh
 source mac-lib-homebrew.sh
 
 formulas_to_install="curl wget git"

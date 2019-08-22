@@ -1,6 +1,6 @@
 .PHONY: help
 help: ## ** Show this help message
-	@perl -nle'print $& if m{^[a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-40s\033[0m %s\n", $$1, $$2}'
+	@perl -nle'print $& if m{^[a-zA-Z0-9_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-40s\033[0m %s\n", $$1, $$2}'
 
 
 .PHONY: setup-brew
@@ -34,5 +34,5 @@ setup-sanhe: setup-python setup-aws ## ** Set Up Sanhe Hu's development laptop
 
 
 .PHONY: setup-amazon-linux-for-python36
-setup-amazon-linux-for-python36:
+setup-amazon-linux-for-python36: ## ** Set Up Python3.6 with pyenv and virtualenv
 	@bash ./amazon-linux-setup-python36.sh

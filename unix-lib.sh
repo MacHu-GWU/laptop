@@ -1,5 +1,13 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
+#
+# unix likes system (MacOS, Linux) shared library.
+#
+# will be used in
+#
+# - ``mac-setup-lib.sh``
+# - ``amazon-linux-setup-lib.sh``
+
 
 # test if a command is installed in your system
 # usage:
