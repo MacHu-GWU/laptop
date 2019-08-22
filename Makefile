@@ -3,6 +3,7 @@ help: ## ** Show this help message
 	@perl -nle'print $& if m{^[a-zA-Z0-9_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-40s\033[0m %s\n", $$1, $$2}'
 
 
+#--- Mac Laptop ---
 .PHONY: setup-brew
 setup-brew: ## ** Install homebrew
 	@bash ./mac-setup-homebrew.sh
@@ -33,6 +34,11 @@ setup-sanhe: setup-python setup-aws ## ** Set Up Sanhe Hu's development laptop
 	# Python + AWS
 
 
+#--- Amazon Linux ---
 .PHONY: setup-amazon-linux-for-python36
 setup-amazon-linux-for-python36: ## ** Set Up Python3.6 with pyenv and virtualenv
 	@bash ./amazon-linux-setup-python36.sh
+
+.PHONY: setup-amazon-linux-for-docker
+setup-amazon-linux-for-docker: ## ** Set Up docker
+	@bash ./amazon-linux-setup-docker.sh
