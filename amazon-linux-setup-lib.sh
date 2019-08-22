@@ -29,28 +29,4 @@ install_linux_deps() {
     yum_install_this_if_not_exists "curl"
     # install jq to parse json
     yum_install_this_if_not_exists "jq"
-
-    # install pyenv
-    curl -s https://pyenv.run | bash
-
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-
-    add_line_to 'export PYENV_ROOT="$HOME/.pyenv"' ~/.bash_profile
-    add_line_to 'export PATH="$PYENV_ROOT/bin:$PATH"' ~/.bash_profile
-    add_line_to 'eval "$(pyenv init -)"' ~/.bash_profile
-    add_line_to 'eval "$(pyenv virtualenv-init -)"' ~/.bash_profile
-
-    add_line_to 'export PYENV_ROOT="$HOME/.pyenv"' ~/.bashrc
-    add_line_to 'export PATH="$PYENV_ROOT/bin:$PATH"' ~/.bashrc
-    add_line_to 'eval "$(pyenv init -)"' ~/.bashrc
-    add_line_to 'eval "$(pyenv virtualenv-init -)"' ~/.bashrc
-
-    yum_install_this_if_not_exists "gcc"
-    sudo yum -y install @development zlib-devel bzip2 bzip2-devel readline-devel \
-        sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
-
-    print_colored_line $color_green "Successfully installed pyenv, enter `$ bash` to reload your shell..."
 }

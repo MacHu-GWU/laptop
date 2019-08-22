@@ -3,12 +3,6 @@
 
 source amazon-linux-setup-lib.sh
 
-if [ "$os_is_linux" != "Y" ]; then
-    print_colored_line $color_red "It is not a Linux Machine, exit ..."
-    exit 1
-fi
-
-
 install_pyenv() {
     # install pyenv
     if this_command_exists "pyenv"; then
