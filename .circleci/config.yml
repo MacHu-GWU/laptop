@@ -2,7 +2,7 @@ version: 2
 jobs:
   setupAmazonLinux:
     docker:
-      - image: circleci/python:2.7
+      - image: amazonlinux
     steps:
       - checkout
       - run:
