@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  setupAmazonLinux:
+    docker:
+      - image: circleci/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: Check Scripts
+          command: |
+            make
+            make setup-amazon-linux-for-python36
+            make setup-amazon-linux-for-docker
+  build-job:
+    ...
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - setupAmazonLinux
