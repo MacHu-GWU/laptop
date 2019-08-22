@@ -11,8 +11,6 @@ jobs:
             make
             make setup-amazon-linux-for-python36
             make setup-amazon-linux-for-docker
-  build-job:
-    ...
 
 workflows:
   version: 2
