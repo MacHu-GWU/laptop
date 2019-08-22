@@ -8,9 +8,9 @@ source unix-lib.sh
 #   usage: install brew
 install_brew() {
     if this_command_exists "brew"; then
-        echo "brew is already installed."
+        print_colored_line $color_cyan "brew is already installed."
     else
-        echo "brew is NOT installed! start install brew:"
+        print_colored_line $color_cyan "brew is NOT installed! start install brew:"
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 }

@@ -4,33 +4,38 @@ help: ## ** Show this help message
 
 
 #--- Mac Laptop ---
-.PHONY: setup-brew
-setup-brew: ## ** Install homebrew
+.PHONY: setup-mac-brew
+setup-mac-brew: ## ** Install homebrew
 	@bash ./mac-setup-homebrew.sh
 
 
-.PHONY: setup-linux-tools
-setup-linux-tools: setup-brew ## ** Set Up useful Linux tools
+.PHONY: setup-mac-linux-tools
+setup-mac-linux-tools: setup-mac-brew ## ** Set Up useful Linux tools
 	@bash ./mac-setup-linux-tools.sh
 
 
-.PHONY: setup-python
-setup-python: setup-linux-tools ## ** Set Up Python Development Tools
+.PHONY: setup-mac-zsh-shell
+setup-mac-zsh-shell: setup-mac-brew ## ** Set Up zsh shell
+	@bash ./mac-setup-zsh.sh
+
+
+.PHONY: setup-mac-python
+setup-mac-python: setup-mac-linux-tools ## ** Set Up Python Development Tools
 	@bash ./mac-setup-python.sh
 
 
-.PHONY: setup-ruby
-setup-ruby: setup-linux-tools ## ** Set Up Ruby Development Tools
+.PHONY: setup-mac-ruby
+setup-mac-ruby: setup-mac-linux-tools ## ** Set Up Ruby Development Tools
 	@bash ./mac-setup-ruby.sh
 
 
-.PHONY: setup-aws
-setup-aws: setup-linux-tools ## ** Set Up Ruby Development Tools
+.PHONY: setup-mac-aws
+setup-mac-aws: setup-mac-linux-tools ## ** Set Up Ruby Development Tools
 	@bash ./mac-setup-aws.sh
 
 
-.PHONY: setup-sanhe
-setup-sanhe: setup-python setup-aws ## ** Set Up Sanhe Hu's development laptop
+.PHONY: setup-mac-sanhe
+setup-mac-sanhe: setup-mac-python setup-mac-aws ## ** Set Up Sanhe Hu's development laptop
 	# Python + AWS
 
 
