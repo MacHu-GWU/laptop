@@ -32,4 +32,5 @@ install_pyenv() {
         sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
 
     print_colored_line $color_green 'Successfully installed pyenv, enter "$ bash" to reload your shell...'
+    print_colored_line $color_green 'type pyenv to test if it is successfully installed'
 }
