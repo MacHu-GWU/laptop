@@ -1,7 +1,7 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 
-source mac-lib.sh
+source unix-lib.sh
 
 # install Homebrew (if not installed)
 #
