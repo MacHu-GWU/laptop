@@ -13,7 +13,6 @@ jobs:
             yum -y install make
             make
             make setup-amazon-linux-for-python36
-            make setup-amazon-linux-for-docker
 
 workflows:
   version: 2
