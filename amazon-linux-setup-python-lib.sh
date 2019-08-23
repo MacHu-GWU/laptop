@@ -27,9 +27,10 @@ install_pyenv() {
         add_line_to 'eval "$(pyenv virtualenv-init -)"' ~/.bash_profile
     fi
     # install c compile so we can install Python from source
-    sudo yum -y install gcc
-    sudo yum -y install @development zlib-devel bzip2 bzip2-devel readline-devel \
-        sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
+    yum -y install gcc
+    yum -y install @development zlib-devel bzip2 bzip2-devel tar \
+        readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel \
+        findutils
 
     print_colored_line $color_green 'Successfully installed pyenv, enter "$ bash" to reload your shell...'
     print_colored_line $color_green 'type pyenv to test if it is successfully installed'

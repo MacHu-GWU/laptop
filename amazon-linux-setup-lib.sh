@@ -19,7 +19,7 @@ yum_install_this_if_not_exists() {
         print_colored_line $color_cyan "$1 is already installed in yum."
     else
         print_colored_line $color_cyan "$1 is NOT installed! start install $1:"
-        sudo yum -y install "$1"
+        yum -y install "$1"
         print_colored_line $color_green "success!"
     fi
 }

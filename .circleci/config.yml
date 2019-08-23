@@ -8,6 +8,9 @@ jobs:
       - run:
           name: Check Scripts
           command: |
+            yum -y install git
+            yum -y install perl
+            yum -y install make
             make
             make setup-amazon-linux-for-python36
             make setup-amazon-linux-for-docker
