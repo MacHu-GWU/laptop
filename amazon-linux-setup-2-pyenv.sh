@@ -24,7 +24,7 @@ else
     add_line_to 'export PATH="$PYENV_ROOT/bin:$PATH"' ~/.bash_profile
     add_line_to 'eval "$(pyenv init -)"' ~/.bash_profile
     add_line_to 'eval "$(pyenv virtualenv-init -)"' ~/.bash_profile
-fi
 
-print_colored_line $color_green 'Successfully installed pyenv, enter "$ bash" to reload your shell...'
-print_colored_line $color_green 'type pyenv to test if it is successfully installed'
+    print_colored_line $color_green 'Successfully installed pyenv, enter "$ bash" to reload your shell...'
+    print_colored_line $color_green 'type pyenv to test if it is successfully installed'
+fi

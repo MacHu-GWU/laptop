@@ -3,7 +3,8 @@
 
 source amazon-linux-setup-pyenv-lib.sh
 
-# install curl to make http request
-yum_install_this_if_not_exists "curl"
-# install jq to parse json
-yum_install_this_if_not_exists "jq"
+# install c compile so we can install Python from source
+yum -y install gcc
+yum -y install @development zlib-devel bzip2 bzip2-devel tar \
+    readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel \
+    findutils
