@@ -42,7 +42,9 @@ setup-mac-sanhe: setup-mac-python setup-mac-aws ## ** Set Up Sanhe Hu's developm
 #--- Amazon Linux ---
 .PHONY: setup-amazon-linux-for-python36
 setup-amazon-linux-for-python36: ## ** Set Up Python3.6 with pyenv and virtualenv
-	@bash ./amazon-linux-setup-python36.sh
+	@sudo bash ./amazon-linux-setup-1-linux-deps.sh
+	@bash ./amazon-linux-setup-2-pyenv.sh
+	@sudo bash ./amazon-linux-setup-3-c-compiler-for-python.sh
 
 .PHONY: setup-amazon-linux-for-docker
 setup-amazon-linux-for-docker: ## ** Set Up docker
