@@ -6,6 +6,11 @@ source amazon-linux-setup-python-lib.sh
 install_linux_deps
 install_pyenv
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 pyenv install 3.6.8 -s # install python version
 pyenv global 3.6.8 # set current python version
 
