@@ -45,6 +45,8 @@ setup-amazon-linux-for-python36: ## ** Set Up Python3.6 with pyenv and virtualen
 	@sudo bash ./amazon-linux-setup-1-linux-deps.sh
 	@bash ./amazon-linux-setup-2-pyenv.sh
 	@sudo bash ./amazon-linux-setup-3-c-compiler-for-python.sh
+	@bash ./amazon-linux-setup-4-python36.sh
+
 
 .PHONY: setup-amazon-linux-for-docker
 setup-amazon-linux-for-docker: ## ** Set Up docker
