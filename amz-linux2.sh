@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run this script with ``sudo bash amz-linux2.sh`` on Amazon Linux 2 EC2
+# Some tools has to be installed with sudo. But pyenv related tools don't need sudo
+
 dir_here="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 source ${dir_here}/source-amz-linux2.sh
