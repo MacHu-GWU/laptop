@@ -11,6 +11,7 @@ if this_command_exists "brew"; then
     print_colored_line $color_cyan "brew is already installed."
 else
     print_colored_line $color_cyan "brew is NOT installed! start install:"
+    xcode-select --install
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
