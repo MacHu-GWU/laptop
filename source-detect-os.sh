@@ -1,6 +1,8 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 
+# This script should be sourced to use
+#
 # Variables from this script:
 #
 # - DETECTED_OS: Windows | Darwin | Linux

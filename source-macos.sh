@@ -6,6 +6,8 @@ dir_here="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source ${dir_here}/source-unix-lib.sh
 source ${dir_here}/source-detect-os.sh
 
+# This script should be sourced to use
+#
 # test if a formula is installed in brew
 #
 #   usage: if brew_installed_this_formula "wget"; then ...

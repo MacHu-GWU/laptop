@@ -1,54 +1,47 @@
-.. image:: https://circleci.com/gh/MacHu-GWU/laptop.svg?style=svg
-    :target: https://circleci.com/gh/MacHu-GWU/laptop
-
 .. image:: https://img.shields.io/badge/STAR_Me_on_GitHub!--None.svg?style=social
     :target: https://github.com/MacHu-GWU/configirl-project
 
 
-What is laptop Project
+Why this Project
 ==============================================================================
 
-This project aims to ease my life with setup my **MacBook developer laptop** or **AWS EC2**.
-
-- **Every bash scripts ends with** ``-lib.sh`` **means it should be sourced to use**.
-- **Don't directly run bash scripts, call them from** ``make xxx`` command.
+This project helps developer to configure the Python Developer environment and tooling on MacOS, Redhat, Unbuntu, ... Greatly ease my life.
 
 
-To Get Start
+Why Not Ansible
 ------------------------------------------------------------------------------
+
+First ansible is great. Ansible can setup mass amount of server very quick. However, there's a lots of technique overhead to make ansible works on a laptop. I want something can be used out-of-the-box
+
+Shell scripts in this repo can be used manually in bash. But also be capable to use with ansible.
+
+
+Usage
+------------------------------------------------------------------------------
+
+**Step 1, download the code**:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/MacHu-GWU/laptop
-    $ cd <path-to-laptop-directory>
+    curl -L https://github.com/MacHu-GWU/laptop/tarball/master | tar xz
+    cd MacHu-GWU-laptop-${random_command_hash}
 
+**Step 2, run setup scripts**:
 
-Setup Python Development Environment on Mac
-------------------------------------------------------------------------------
+If ``make`` command is available. Then you can just type ``make`` in your terminal, and call sub commands accordingly.
 
-As a python developer on Mac, you need:
+If ``make`` command is NOT available. Then you can manually do either one of (Depends on your OS):
 
-- `zsh + oh-my-zsh <https://ohmyz.sh/>`_: a fancy, friendly shell for developer
-- `pyenv <https://github.com/pyenv/pyenv>`_: multiple python version and virtual environment management
-- If you do a lots of AWS, you need `awscli <https://aws.amazon.com/cli/>`_:
+.. code-block:: bash
 
-Just run these commands, it set up everything for you::
+    # For MacOS
+    bash macos.sh
 
-    $ make
-    $ make setup-mac-zsh-shell
-    $ make setup-mac-python
-    $ make setup-mac-aws
+    # For Amazon Linux 2
+    sudo bash amz-linux2.sh
 
+    # For Redhat
+    sudo bash redhat.sh
 
-Setup Python Development Environment on Amazon Linux EC2
-------------------------------------------------------------------------------
-
-If you want to run python program, python web server, or perform deployment from Amazon Linux EC2 instance, you need:
-
-- `pyenv <https://github.com/pyenv/pyenv>`_: multiple python version and virtual environment management
-- python3.6 (install python3.6 on Linux is tricky!).
-
-Just run these commands, it set up everything for you::
-
-    $ make
-    $ make setup-amazon-linux-for-python36
+    # For Ubuntu
+    sudo bash ubuntu.sh
