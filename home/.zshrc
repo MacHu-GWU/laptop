@@ -22,6 +22,13 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 #------------------------------------------------------------------------------
+# Enable pyenv - Python environment manager
+#------------------------------------------------------------------------------
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+#------------------------------------------------------------------------------
 # Enable zsh-autocomplete plugin
 #
 # - plugin homepage: https://github.com/marlonrichert/zsh-autocomplete repo
