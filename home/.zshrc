@@ -1,9 +1,25 @@
+#------------------------------------------------------------------------------
+# My personal favorite zsh configuration as of 2022-07-17
+#------------------------------------------------------------------------------
+
+# powerlevel10k theme stuff
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Disable oh-my-zsh auto update
+DISABLE_AUTO_UPDATE="true"
 
 # Display international characters properly
 # See https://superuser.com/questions/583031/how-can-i-get-zsh-to-display-international-characters-properly
 export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 #------------------------------------------------------------------------------
 # Enable zsh-autocomplete plugin
@@ -15,14 +31,15 @@ export LANG="en_US.UTF-8"
 source ~/Documents/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sanhehu/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell" # Default minimal
-ZSH_THEME="agnoster" # My favorite
+# ZSH_THEME="agnoster" # A popular and beautiful one
+ZSH_THEME="powerlevel10k/powerlevel10k" # My favorite
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -94,15 +111,15 @@ source $ZSH/oh-my-zsh.sh
 # Because it load the theme content from ~/.oh-my-zsh folder
 # Then we can override some function used in the theme
 #------------------------------------------------------------------------------
-prompt_end() {
-  if [[ -n $CURRENT_BG ]]; then
-    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  else
-    echo -n "%{%k%}"
-  fi
-  echo -n "\n$(date +"%Y-%m-%d %H:%M:%S%z") $%{%f%}"
-  CURRENT_BG=''
-}
+# prompt_end() {
+#   if [[ -n $CURRENT_BG ]]; then
+#     echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+#   else
+#     echo -n "%{%k%}"
+#   fi
+#   echo -n "\n$(date +"%Y-%m-%d %H:%M:%S%z") $%{%f%}"
+#   CURRENT_BG=''
+# }
 
 # User configuration
 
@@ -130,20 +147,6 @@ prompt_end() {
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-#------------------------------------------------------------------------------
-# Open JDK
-#------------------------------------------------------------------------------
-
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
-
-export PATH="/opt/homebrew/Cellar/graphviz/3.0.0/bin:$PATH"
-
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export PATH="$PATH:$HOME/gs-venv/bin"
-export PATH="$PATH:/Library/TeX/texbin"
-
 #------------------------------------------------------------------------------
 # Enable zsh-autosuggestions plugin
 #
@@ -162,18 +165,6 @@ source ~/Documents/GitHub/zsh-autosuggestions/zsh-autosuggestions.zsh
 #------------------------------------------------------------------------------
 source ~/Documents/GitHub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#------------------------------------------------------------------------------
-# Enable zsh-history-substring-search plugin
-#
-# - plugin homepage https://github.com/zsh-users/zsh-history-substring-search
-# - has to be cloned to ~/Documents/GitHub directory
-# - MAKE SURE this line is later than zsh-syntax-highlighting.zsh line
-#------------------------------------------------------------------------------
-# source ~/Documents/GitHub/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-# bindkey '^[[A' up-line-or-history
-# bindkey '^[[B' down-line-or-history
-
-
-# bindkey '^[[A' up-line-or-search
-# bindkey '^[[B' down-line-or-select
+# powerlevel10k theme stuff
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
