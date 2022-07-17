@@ -12,7 +12,7 @@ export LANG="en_US.UTF-8"
 # - has to be cloned to ~/Documents/GitHub directory
 # - add this source at or near the top of your .zshrc
 #------------------------------------------------------------------------------
-# source ~/Documents/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/Documents/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sanhehu/.oh-my-zsh"
